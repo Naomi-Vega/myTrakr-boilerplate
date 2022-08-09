@@ -6,7 +6,7 @@ export const postMethod = (endpoint, data) => {
         const newAccount = data;
         $.ajax({
           type: "POST",
-          url: `http://localhost:3000/${endpoint}`,
+          url: `https://my-trakr-boilerplate.herokuapp.com/${endpoint}`,
           data: JSON.stringify({ newAccount }),
           dataType: "json",
           contentType: "application/json",
@@ -17,7 +17,7 @@ export const postMethod = (endpoint, data) => {
         const newTransaction = data;
         $.ajax({
           type: "POST",
-          url: `http://localhost:3000/${endpoint}`,
+          url: `https://my-trakr-boilerplate.herokuapp.com/${endpoint}`,
           data: JSON.stringify({ newTransaction }),
           dataType: "json",
           contentType: "application/json",
@@ -28,7 +28,7 @@ export const postMethod = (endpoint, data) => {
         const newCategory = data;
         $.ajax({
           type: "POST",
-          url: `http://localhost:3000/${endpoint}`,
+          url: `https://my-trakr-boilerplate.herokuapp.com/${endpoint}`,
           data: JSON.stringify({ newCategory }),
           dataType: "json",
           contentType: "application/json",
@@ -39,7 +39,7 @@ export const postMethod = (endpoint, data) => {
   
   export const addNewAccount = (text) => {
     let array = [];
-    $.get("http://localhost:3000/accounts").done((data) => {
+    $.get("https://my-trakr-boilerplate.herokuapp.com").done((data) => {
       data.forEach((element) => {
         array.push(element.username);
       });
@@ -58,7 +58,7 @@ export const postMethod = (endpoint, data) => {
   
     let accountsArr = [];
   
-    let dataPromise = $.get("http://localhost:3000/accounts");
+    let dataPromise = $.get("https://my-trakr-boilerplate.herokuapp.com/accounts");
   
     dataPromise.done((data)=>{
   
@@ -99,7 +99,7 @@ export const postMethod = (endpoint, data) => {
   };
   
   export const getAccounts = async () => {
-    const data = await $.get('http://localhost:3000/accounts');
+    const data = await $.get('https://my-trakr-boilerplate.herokuapp.com/accounts');
     return data.map((element) => {
       return new Account(element.username, element.transactions, element.id);
     });
@@ -165,7 +165,7 @@ export const postMethod = (endpoint, data) => {
   
   export const addToTransactionTable = (table) =>{
   
-    let dataPromise = $.get("http://localhost:3000/transactions")
+    let dataPromise = $.get("https://my-trakr-boilerplate.herokuapp.com/transactions")
   
     dataPromise.done((transactionData) =>{
       table.html('')

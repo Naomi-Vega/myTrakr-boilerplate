@@ -19,7 +19,7 @@ export const handleCategories = () => {
   let categoriesArr = [];
   const categoryInput = $("#add-cat-input");
 
-  $.get("http://localhost:3000/categories").done((data)=>{
+  $.get("https://my-trakr-boilerplate.herokuapp.com/categories").done((data)=>{
     data.forEach((element) => {
       categoriesArr.push(element.name);
     });
@@ -40,7 +40,7 @@ export const setCategories = () => {
 
   categorySelector.html("<option selected>Choose...</option>");
 
-  $.get("http://localhost:3000/categories").done((data)=>{
+  $.get("https://my-trakr-boilerplate.herokuapp.com/categories").done((data)=>{
     data.forEach((element) => {
       categories.push(element.name);
     });
